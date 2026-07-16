@@ -27,8 +27,8 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        header h1 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; }
-        header p { margin: 5px 0 0 0; opacity: 0.9; font-size: 0.9rem; }
+        header h1 { margin: 0; font-size: 1.4rem; letter-spacing: 1px; }
+        header p { margin: 5px 0 0 0; opacity: 0.9; font-size: 0.85rem; }
         
         .main-nav {
             display: flex;
@@ -36,14 +36,15 @@
             background-color: #e0e0e0;
             overflow-x: auto;
             white-space: nowrap;
-            sticky: top;
+            position: sticky;
+            top: 0;
             z-index: 100;
         }
         .main-nav button {
             background: none;
             border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
+            padding: 12px 15px;
+            font-size: 0.95rem;
             font-weight: bold;
             cursor: pointer;
             color: #555;
@@ -55,67 +56,87 @@
             background-color: #f5f5f7;
         }
 
-        .container { max-width: 900px; margin: 20px auto; padding: 0 15px 60px 15px; }
+
+        .container { max-width: 900px; margin: 15px auto; padding: 0 12px 60px 12px; }
         .section-panel { display: none; }
         .section-panel.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+
         /* 內部分頁標籤 */
-        .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px; }
+        .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 15px; }
         @media(min-width: 600px) { .sub-tabs { grid-template-columns: repeat(6, 1fr); } }
         .sub-tabs button {
-            background-color: #fff; border: 1px solid #ccc; padding: 10px 5px; border-radius: 6px;
-            font-size: 0.85rem; font-weight: bold; cursor: pointer; transition: all 0.2s;
+            background-color: #fff; border: 1px solid #ccc; padding: 10px 4px; border-radius: 6px;
+            font-size: 0.8rem; font-weight: bold; cursor: pointer; transition: all 0.2s;
+            text-align: center; line-height: 1.2;
         }
         .sub-tabs button.active { background-color: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 
+
         /* 行程細流表格 */
-        .table-responsive { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
-        th { background-color: #f1f3f4; padding: 12px; font-weight: bold; border-bottom: 2px solid #ddd; }
-        td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+        .table-responsive { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; min-width: 500px; }
+        th { background-color: #f1f3f4; padding: 10px; font-weight: bold; border-bottom: 2px solid #ddd; }
+        td { padding: 10px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.4; }
         tr:hover { background-color: #f9f9f9; }
-        .time-col { width: 90px; font-weight: bold; color: var(--primary-color); }
-        .group-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-right: 4px; }
+        .time-col { width: 85px; font-weight: bold; color: var(--primary-color); }
+        .group-tag { display: inline-block; padding: 2px 5px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-right: 3px; }
         .tag-ndc { background-color: #fff3e0; color: var(--ndc-orange); border: 1px solid var(--ndc-orange); }
         .tag-moea { background-color: #e1f5fe; color: var(--moea-blue); border: 1px solid var(--moea-blue); }
         .tag-both { background-color: #efebe9; color: #5d4037; }
 
+
         /* 據點知識卡 */
-        .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 18px; margin-bottom: 20px; border-left: 5px solid var(--primary-color); }
-        .card h3 { margin-top: 0; color: var(--primary-color); font-size: 1.2rem; }
-        .card h4 { color: #e65100; margin: 15px 0 5px 0; font-size: 0.95rem; }
-        .card ul { margin: 5px 0; padding-left: 20px; font-size: 0.9rem; }
-        .card li { margin-bottom: 5px; }
+        .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); padding: 15px; margin-bottom: 15px; border-left: 5px solid var(--primary-color); }
+        .card h3 { margin-top: 0; color: var(--primary-color); font-size: 1.1rem; margin-bottom: 8px; }
+        .card h4 { color: #e65100; margin: 12px 0 4px 0; font-size: 0.9rem; }
+        .card ul { margin: 4px 0; padding-left: 18px; font-size: 0.85rem; }
+        .card li { margin-bottom: 4px; }
+
 
         /* 超連結樣式 */
-        .btn-link { display: inline-flex; align-items: center; padding: 4px 8px; margin: 2px; font-size: 0.8rem; font-weight: 500; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+        .btn-link { display: inline-flex; align-items: center; padding: 3px 6px; margin: 2px 1px; font-size: 0.75rem; font-weight: 500; border-radius: 4px; text-decoration: none; }
         .link-map { background-color: #e8f0fe; color: #1a73e8; border: 1px solid #d2e3fc; }
         .link-web { background-color: #e6f4ea; color: #137333; border: 1px solid #ceead6; }
         .btn-link:hover { opacity: 0.8; }
 
+
         /* 團隊清單樣式 */
-        .team-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .team-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
         @media(min-width: 600px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
-        .member-box { background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #ccc; }
+        .member-box { background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 4px solid #ccc; font-size: 0.85rem; }
         .member-box.ndc-border { border-top-color: var(--ndc-orange); }
         .member-box.moea-border { border-top-color: var(--moea-blue); }
-        .m-name { font-weight: bold; font-size: 1rem; }
-        .m-title { font-size: 0.8rem; color: #666; margin-bottom: 6px; }
-        .m-desc { font-size: 0.85rem; line-height: 1.4; color: #444; background: #fafafa; padding: 6px; border-radius: 4px; }
+        .m-name { font-weight: bold; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; }
+        .m-title { font-size: 0.75rem; color: #666; margin: 3px 0 6px 0; line-height: 1.2; }
+        .m-desc { font-size: 0.8rem; line-height: 1.4; color: #444; background: #fafafa; padding: 6px; border-radius: 4px; }
 
-        /* 筆記區 */
-        .note-area { margin-top: 20px; }
-        .note-area textarea { width: 100%; height: 100px; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; font-family: inherit; }
-        .status-msg { text-align: right; font-size: 0.8rem; color: green; height: 15px; }
+
+        /* 筆記區優化 (加大高度) */
+        .note-area { margin-top: 15px; }
+        .note-area textarea { 
+            width: 100%; 
+            height: 180px; 
+            padding: 12px; 
+            border-radius: 6px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+            font-family: inherit; 
+            font-size: 0.95rem; 
+            resize: vertical;
+        }
+        .status-msg { text-align: right; font-size: 0.75rem; color: green; height: 15px; margin-top: 5px; }
     </style>
 </head>
 <body>
+
 
 <header>
     <h1>🇯🇵 115年青年赴日本參訪地方創生交流</h1>
     <p>整體時程概覽與公務對接互動系統 (115年7月20日 - 7月25日)</p>
 </header>
+
 
 <!-- 主導覽列 -->
 <div class="main-nav">
@@ -124,7 +145,9 @@
     <button id="nav-btn-3" onclick="showPanel('panel-ref')">🧳 隨身參考資料</button>
 </div>
 
+
 <div class="container">
+
 
     <!-- 面板 1: 行程細流 -->
     <div id="panel-flow" class="section-panel active">
@@ -138,6 +161,7 @@
             <button id="day-btn-6" onclick="switchDay(6)">Day 6<br>7/25 (六)</button>
         </div>
 
+
         <!-- DAY 1 CONTENT -->
         <div id="flow-d1" class="day-flow-content">
             <div class="table-responsive">
@@ -148,10 +172,12 @@
                     <tbody>
                         <tr><td class="time-col">06:55-11:55</td><td>【航程】臺灣桃園(TPE) ➔ 新千歲(CTS) (長榮航空 BR166)</td><td><span class="group-tag tag-both">全體</span> 飛行時間 4h</td></tr>
                         <tr><td class="time-col">12:50-14:00</td><td>【移動】新千歲機場 ➔ 小樽市午餐地點</td><td><span class="group-tag tag-both">全體</span> 車程約 1h~1h30min</td></tr>
-                        <tr><td class="time-col">14:00-15:00</td><td>【午餐】小樽Bain西式餐酒館 (事先點餐)
-                            <a class="btn-link link-map" href="https://maps.google.com/?q=Otaru+Bain" target="_blank">📍地圖</a>
-                            <a class="btn-link link-web" href="http://www.小樽バイン.jp" target="_blank">🌐官網</a>
-                        </td><td><span class="group-tag tag-both">全體</span> A餐海鮮、B餐牛排</td></tr>
+                        <tr><td class="time-col">14:00-15:00</td><td>【分車午餐】依據車次前往不同餐廳：<br>
+                            <strong>🚗 A車：Otaru Bine (小樽Bain西式餐酒館)</strong> 
+                            <a class="btn-link link-map" href="https://maps.google.com/?q=Otaru+Bain" target="_blank">📍地圖</a><br>
+                            <strong>🚗 B車：ニュー三幸 小樽本店</strong>
+                            <a class="btn-link link-map" href="https://maps.google.com/?q=New+Sanko+Otaru" target="_blank">📍地圖</a>
+                        </td><td><span class="group-tag tag-both">全體</span> 分車用餐</td></tr>
                         <tr><td class="time-col">15:20-16:30</td><td>【參訪】小樽市綜合博物館（本館）
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Otaru+Museum" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 15:20交換名片、15:30體驗鐵馬號、16:00交流</td></tr>
@@ -160,12 +186,13 @@
                         </td><td><span class="group-tag tag-both">全體</span> 集合點：音樂盒堂本館前</td></tr>
                         <tr><td class="time-col">17:40-18:40</td><td>【移動】小樽市 ➔ 札幌市（進飯店 Check in）</td><td><span class="group-tag tag-both">全體</span> 車程 45min~1h</td></tr>
                         <tr><td class="time-col">18:45</td><td>【接機】陳東升教授抵達新千歲機場</td><td>搭乘計程車前往札幌市區會合</td></tr>
-                        <tr><td class="time-col">晚間</td><td>【晚餐】札幌市區用餐 (湯咖哩奧芝商店 駅前創成寺)
-                            <a class="btn-link link-map" href="https://maps.google.com/?q=Okushiba+Shouten+Sapporo" target="_blank">📍地圖</a>
-                        </td><td><span class="group-tag tag-ndc">國發會</span><span class="group-tag tag-moea">經濟部</span> <strong style="color:red;">※不含青年代表</strong></td></tr>
+                        <tr><td class="time-col">晚間</td><td>【晚餐】札幌用餐 海之居酒屋 (ASTY45店)
+                            <a class="btn-link link-map" href="https://maps.google.com/?q=Umi+he+ASTY45" target="_blank">📍地圖</a>
+                        </td><td><span class="group-tag tag-ndc">國發會</span><span class="group-tag tag-moea">經濟部</span> <strong style="color:red;">※14人線上預約（不含青年）</strong></td></tr>
                     </tbody>
                 </table>
             </div>
+
 
             <div class="card">
                 <h3>🏛️ 據點焦點：小樽市綜合博物館 & 街區活化</h3>
@@ -177,7 +204,7 @@
                 </ul>
                 <h4>💬 交流議題</h4>
                 <ul>
-                    <li><strong>議題一：</strong>博物館如何作為「城市再生」的樞紐入口，引導參訪人潮至周邊街區在地消費？</li>
+                    <li><strong>議題一：</strong>博物館如何成為「城市再生」的樞紐入口，引導參訪人潮至周邊街區在地消費？</li>
                     <li><strong>議題二：</strong>北運河如何兼顧景觀保存、觀光承載與街區活化？公部門與民間如何協力？</li>
                 </ul>
                 <h4>✏️ 當日據點負責提問與紀錄人員</h4>
@@ -187,13 +214,20 @@
             </div>
             
             <div class="card">
-                <h3>🏨 住宿配置資訊</h3>
+                <h3>🏨 住宿配置資訊 (宿札幌)</h3>
                 <ul>
-                    <li><strong>住宿分組1（長官/專家）：</strong>札幌索拉利亞西鐵飯店 <a class="btn-link link-map" href="https://maps.google.com/?q=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank">📍地圖</a> <a class="btn-link link-web" href="https://solaria-sapporo.nnr-h.com" target="_blank">🌐官網</a></li>
-                    <li><strong>住宿分組2（團隊/青年）：</strong>KOKO HOTEL 札幌薄野 <a class="btn-link link-map" href="https://maps.google.com/?q=KOKO+HOTEL+Sapporo+Susukino" target="_blank">📍地圖</a></li>
+                    <li><strong>🚗 A車長官與專家 (住宿分組1)：</strong>札幌索拉利亞西鐵飯店 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://solaria-sapporo.nnr-h.com" target="_blank">🌐官網</a>
+                    </li>
+                    <li><strong>🚗 B車團隊與青年 (住宿分組2)：</strong>KOKO HOTEL 札幌薄野 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=KOKO+HOTEL+Sapporo+Susukino" target="_blank">📍地圖</a>
+                    </li>
+                    <li style="color:#0d47a1; font-weight:bold; list-style:none; margin-top:5px;">💡 A車雙飯店接送：去程先送B車青年(分組2)至KOKO薄野，再送長官(分組1)回索拉利亞。</li>
                 </ul>
             </div>
         </div>
+
 
         <!-- DAY 2 CONTENT -->
         <div id="flow-d2" class="day-flow-content" style="display:none;">
@@ -223,9 +257,10 @@
                 </table>
             </div>
 
+
             <div class="card">
                 <h3>🏢 官方拜會核心：北海道廳治理轉型</h3>
-                <p><strong>對接人：</strong>三橋剛 副知事（強調現場需求導向、全道整合政策）</p>
+                <p><strong>對接人：</strong>三橋剛 副知事</p>
                 <h4>💬 交流議題</h4>
                 <ul>
                     <li><strong>人口對策：</strong>如何透過移居、二地域居住、Workation讓外部人口與地方建立長期連結？</li>
@@ -236,7 +271,22 @@
                     <li>北海道廳：黃建嘉（大房食品）、徐孝晴（頭分埔文化工作室）、林峻毅（林果園）</li>
                 </ul>
             </div>
+
+
+            <div class="card">
+                <h3>🏨 住宿配置資訊 (續宿札幌)</h3>
+                <ul>
+                    <li><strong>🚗 A車長官與專家 (住宿分組1)：</strong>札幌索拉利亞西鐵飯店 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://solaria-sapporo.nnr-h.com" target="_blank">🌐官網</a>
+                    </li>
+                    <li><strong>🚗 B車團隊與青年 (住宿分組2)：</strong>KOKO HOTEL 札幌薄野 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=KOKO+HOTEL+Sapporo+Susukino" target="_blank">📍地圖</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
 
         <!-- DAY 3 CONTENT -->
         <div id="flow-d3" class="day-flow-content" style="display:none;">
@@ -250,20 +300,22 @@
                         <tr><td class="time-col">10:45-11:45</td><td>【官式拜會】東川町町長 菊地伸 @東川文化藝術交流中心
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Higashikawa+Cultural+Arts+Exchange+Center" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 11:05頒發特別町民證與合影、11:20東川町關係人口模式交流</td></tr>
-                        <tr><td class="time-col">12:00-13:00</td><td>【午餐】Kitoushi之森 Kitoron 隈研吾監修大雪山景觀餐廳
-                            <a class="btn-link link-map" href="https://maps.google.com/?q=Kitoron+Higashikawa" target="_blank">📍地圖</a>
-                        </td><td><span class="group-tag tag-both">全體</span> 特色道產小菜選品套餐（※特別調度公休日營業）</td></tr>
+                        <tr><td class="time-col">12:00-13:00</td><td>【午餐】東川町立日本語學校 CENTPURE I / II
+                            <a class="btn-link link-map" href="https://maps.google.com/?q=Higashikawa+Centpure" target="_blank">📍地圖</a>
+                        </td><td><span class="group-tag tag-both">全體</span> <strong>🍱 享用在地特製定食便當</strong></td></tr>
                         <tr><td class="time-col">13:15-14:30</td><td>【導覽】東川町內公共設施與生活環境導覽走讀</td><td><span class="group-tag tag-both">全體</span> 實地考察大雪山伏流水與無自來水生活基盤</td></tr>
-                        <tr><td class="time-col">14:30-16:30</td><td>【參訪】東川町立日本語學校 (全日首所公立日語學校)
+                        <tr><td class="time-col">14:30-16:30</td><td>【參訪】東川町立日本語學校 
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Higashikawa+Japanese+Language+School" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 15:30臺灣青年簡報分享、16:10日本語學校空間導覽</td></tr>
                         <tr><td class="time-col">16:30-17:15</td><td>【移動】東川町 ➔ 旭川市（飯店Check in）</td><td><span class="group-tag tag-both">全體</span> 車程 30~45min</td></tr>
-                        <tr><td class="time-col">晚間</td><td>【晚餐】旭川市區用餐 (THE やきとん BASE 炭火烤豬串專門店)
+                        <tr><td class="time-col">18:30</td><td>【晚餐】旭川市區用餐 (THE やきとん BASE 炭火烤豬串專門店)
                             <a class="btn-link link-map" href="https://maps.google.com/?q=THE+yakiton+BASE" target="_blank">📍地圖</a>
+                            <a class="btn-link link-web" href="https://theyakitonbase.com/" target="_blank">🌐官網</a>
                         </td><td><span class="group-tag tag-ndc">國發會</span><span class="group-tag tag-moea">經濟部</span> <strong style="color:red;">※不含青年代表</strong></td></tr>
                     </tbody>
                 </table>
             </div>
+
 
             <div class="card">
                 <h3>📸 關係人口典範：東川町「適疎」理念與制度設計</h3>
@@ -272,20 +324,22 @@
                     <li><strong>股東制度：</strong>將故鄉納稅轉化為「投資語言」，發放股東證，讓一次性捐款者變長期支持者。</li>
                     <li><strong>你的椅子計畫：</strong>自2006年起贈送手工木椅給町內出生新生兒，落實全生命週期社會支持。</li>
                 </ul>
-                <h4>💬 交流議題</h4>
-                <ul>
-                    <li>如何以公立日本語學校作為教育引客平台，將外籍人才轉化為日常消費與多文化共生的創生動能？</li>
-                </ul>
             </div>
             
             <div class="card">
-                <h3>🏨 住宿配置資訊</h3>
+                <h3>🏨 住宿配置資訊 (宿旭川)</h3>
                 <ul>
-                    <li><strong>住宿分組1：</strong>旭川阿瑪內克飯店 <a class="btn-link link-map" href="https://maps.google.com/?q=Hotel+Amanek+Asahikawa" target="_blank">📍地圖</a></li>
-                    <li><strong>住宿分組2：</strong>HOTEL Tetora 旭川車站前 <a class="btn-link link-map" href="https://maps.google.com/?q=HOTEL+Tetora+Asahikawa+Ekimae" target="_blank">📍地圖</a></li>
+                    <li><strong>🚗 A車長官與專家 (住宿分組1)：</strong>旭川阿瑪內克飯店 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Hotel+Amanek+Asahikawa" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://amanekhotels.jp/asahikawa/" target="_blank">🌐官網</a>
+                    </li>
+                    <li><strong>🚗 B車團隊與青年 (住宿分組2)：</strong>HOTEL Tetora 旭川車站前 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=HOTEL+Tetora+Asahikawa+Ekimae" target="_blank">📍地圖</a>
+                    </li>
                 </ul>
             </div>
         </div>
+
 
         <!-- DAY 4 CONTENT -->
         <div id="flow-d4" class="day-flow-content" style="display:none;">
@@ -299,40 +353,48 @@
                         <tr><td class="time-col">09:30-11:30</td><td>【參訪】美瑛町觀光協會 (DMO 永續觀光治理模式)
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Biei+Tourism+Association" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 09:50日方講座、10:50臺灣青年地方創生實踐簡報分享</td></tr>
-                        <tr><td class="time-col">11:40-12:10</td><td>【考察】美瑛選果 (農產品六級化與品牌高值化平台)
+                        <tr><td class="time-col">11:40-12:10</td><td>【考察】美瑛選果 
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Biei+Senka" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 考察分級選品、JA美瑛通路體系與產地形象包裝</td></tr>
-                        <tr><td class="time-col">12:40-14:10</td><td>【午餐】Herb Garden Furano 薰衣草花園在地風味自助餐
-                            <a class="btn-link link-map" href="https://maps.google.com/?q=Herb+Garden+Furano" target="_blank">📍地圖</a>
-                        </td><td><span class="group-tag tag-both">全體</span> 湯咖哩、拉麵、當季道產食材料理自助餐饗宴</td></tr>
+                        <tr><td class="time-col">12:40-14:10</td><td>【午餐】Herb Garden Furano 自助餐 (ハーブヒル富良野 - 富良野店)
+                            <a class="btn-link link-map" href="https://maps.google.com/?q=Herb+Hill+Furano" target="_blank">📍地圖</a>
+                        </td><td><span class="group-tag tag-both">全體</span> <strong>🥗 享用北海道在地風味自助餐</strong></td></tr>
                         <tr><td class="time-col">14:30-15:20</td><td>【途經】四季彩之丘 (大面積花卉地景與體驗經濟)
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Shikisai+no+Oka" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 實地考察大面積丘陵花田遊憩導流與環境承載維護</td></tr>
                         <tr><td class="time-col">15:20-18:30</td><td>【長途移動】美瑛 ➔ 富良野(道之驛休息) ➔ 帶廣市飯店</td><td><span class="group-tag tag-both">全體</span> 長途車程約3小時</td></tr>
-                        <tr><td class="time-col">晚間</td><td>【晚餐】帶廣市區用餐 (日航北國飯店 RESTAURANT J 日式定食)
+                        <tr><td class="time-col">19:00</td><td>【晚餐】帶廣市區用餐 (日航北國飯店 RESTAURANT J 日式定食)
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Hotel+Nikko+Northland+Obihiro+Restaurant" target="_blank">📍地圖</a>
+                            <a class="btn-link link-web" href="https://www.jrhotels.co.jp/obihiro/restaurant/j/" target="_blank">🌐官網</a>
                         </td><td><span class="group-tag tag-ndc">國發會</span><span class="group-tag tag-moea">經濟部</span> <strong style="color:red;">※不含青年代表</strong></td></tr>
                     </tbody>
                 </table>
             </div>
 
+
             <div class="card">
                 <h3>🌾 農業創生核心：美瑛町農觀共生與 DMO 機制</h3>
                 <h4>⭐ 參訪亮點</h4>
                 <ul>
-                    <li><strong>美瑛選果：</strong>由 JA 美瑛推動，整合選果市場與米其林一星法式餐廳，將原本的生鮮農產原料升級為「風土名片」。</li>
-                    <li><strong>DMO永續旅遊：</strong>面對丘陵景點帶來的農地侵入問題，觀光協會如何以觀光規範、認定導覽與看板計畫守護地景？</li>
+                    <li><strong>美瑛選果：</strong>由 JA 美瑛推動，整合選果市場與米其林一星法式餐廳。</li>
+                    <li><strong>DMO永續旅遊：</strong>觀光協會如何以觀光規範、看板計畫守護地景？</li>
                 </ul>
             </div>
             
             <div class="card">
-                <h3>🏨 住宿配置資訊</h3>
+                <h3>🏨 住宿配置資訊 (宿帶廣)</h3>
                 <ul>
-                    <li><strong>住宿分組1：</strong>帶廣站前里士滿飯店 <a class="btn-link link-map" href="https://maps.google.com/?q=Richmond+Hotel+Obihiro+Ekimae" target="_blank">📍地圖</a></li>
-                    <li><strong>住宿分組2：</strong>HOTEL Route Inn 帶廣站前 <a class="btn-link link-map" href="https://maps.google.com/?q=Hotel+Route+Inn+Obihiro+Ekimae" target="_blank">📍地圖</a></li>
+                    <li><strong>🚗 A車長官與專家 (住宿分組1)：</strong>帶廣站前里士滿飯店 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Richmond+Hotel+Obihiro+Ekimae" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://richmondhotel.jp/" target="_blank">🌐官網</a>
+                    </li>
+                    <li><strong>🚗 B車團隊與青年 (住宿分組2)：</strong>HOTEL Route Inn 帶廣站前 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Hotel+Route+Inn+Obihiro+Ekimae" target="_blank">📍地圖</a>
+                    </li>
                 </ul>
             </div>
         </div>
+
 
         <!-- DAY 5 CONTENT -->
         <div id="flow-d5" class="day-flow-content" style="display:none;">
@@ -348,11 +410,11 @@
                         <tr><td class="time-col">11:30-12:50</td><td>【午餐】日勝峠山麓 展望餐廳十勝亭 (十勝若牛名物老店)
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Tokachitei" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> A餐帶廣豬肉丼+扇貝鍋、B餐十勝花舞牛壽喜燒</td></tr>
-                        <tr><td class="time-col">14:30-16:00</td><td>【參訪】夕張哈密瓜圓頂中心 (JA銘產中心六級化路徑)
+                        <tr><td class="time-col">14:30-16:00</td><td>【參訪】夕張哈密瓜圓頂中心 
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Yubari+Melon+Dome" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-both">全體</span> 14:55溫室參觀、15:10頂級哈密瓜試吃、15:20交流地理標示GI保護</td></tr>
                         <tr><td class="time-col">16:00-18:20</td><td>【移動】夕張 ➔ 途經道之驛安平D51車站(停30min) ➔ 札幌市區</td><td><span class="group-tag tag-both">全體</span> 考察廢棄車站空間再生鐵道地景活化</td></tr>
-                        <tr><td class="time-col">晚間</td><td>【晚餐】札幌地下街排隊名店 湯咖哩 Shabazou
+                        <tr><td class="time-col">晚間</td><td>【晚餐】札幌地下街 湯咖哩 Shabazou 
                             <a class="btn-link link-map" href="https://maps.google.com/?q=Shabazou+Sapporo" target="_blank">📍地圖</a>
                         </td><td><span class="group-tag tag-ndc">國發會</span><span class="group-tag tag-moea">經濟部</span> <strong style="color:red;">※不含青年代表</strong></td></tr>
                         <tr><td class="time-col">晚餐後</td><td>【自由考察】2026 札幌大通啤酒節 (全日最大戶外夏季節慶)
@@ -362,22 +424,30 @@
                 </table>
             </div>
 
+
             <div class="card">
                 <h3>🍈 產業重組典範：十勝跨域協調 & 夕張礦業轉型農業品牌</h3>
                 <ul>
-                    <li><strong>十勝綜合振興局：</strong>統籌19市町村資源，推動智慧農業與食農品牌，將農村打造成能接續的生活場域。</li>
-                    <li><strong>夕張哈密瓜：</strong>曾因煤礦減產而面臨財政危機的城市，如何靠著極嚴格的共同出貨與GI標示，將淘汰小瓜再利用，重新凝聚為地方前行力量？</li>
+                    <li><strong>十勝綜合振興局：</strong>統籌19市町村資源，推動智慧農業與食農品牌。</li>
+                    <li><strong>夕張哈密瓜：</strong>靠著地理標示(GI)保護機制，打造精準產期體驗經濟。</li>
                 </ul>
             </div>
             
             <div class="card">
-                <h3>🏨 住宿配置資訊</h3>
+                <h3>🏨 住宿配置資訊 (返回札幌)</h3>
                 <ul>
-                    <li><strong>住宿分組1：</strong>札幌索拉利亞西鐵飯店 <a class="btn-link link-map" href="https://maps.google.com/?q=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank">📍地圖</a></li>
-                    <li><strong>住宿分組2（含經濟部長官）：</strong>船舶花園薄野飯店 (Vessel Hotel Campana Susukino) <a class="btn-link link-map" href="https://maps.google.com/?q=Vessel+Hotel+Campana+Susukino" target="_blank">📍地圖</a></li>
+                    <li><strong>🚗 A車國發會長官與專家 (住宿分組1)：</strong>札幌索拉利亞西鐵飯店 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://solaria-sapporo.nnr-h.com" target="_blank">🌐官網</a>
+                    </li>
+                    <li><strong>🚗 B車經濟部長官、團隊與青年 (住宿分組2)：</strong>船舶花園薄野飯店 (Vessel Hotel Campana Susukino) 
+                        <a class="btn-link link-map" href="https://maps.google.com/?q=Vessel+Hotel+Campana+Susukino" target="_blank">📍地圖</a>
+                        <a class="btn-link link-web" href="https://www.vessel-hotel.jp/campana/susukino/" target="_blank">🌐官網</a>
+                    </li>
                 </ul>
             </div>
         </div>
+
 
         <!-- DAY 6 CONTENT -->
         <div id="flow-d6" class="day-flow-content" style="display:none;">
@@ -399,117 +469,177 @@
             </div>
         </div>
 
+
         <!-- 每日隨手筆記 -->
         <div class="note-area">
-            <h3>✍️ 本日公務交涉隨手筆記 / 本日交辦任務</h3>
+            <h3>✍ 公務交涉隨手筆記 / 本日交辦任務</h3>
             <textarea id="hokkaido-note-box" oninput="saveHokkaidoNote()" placeholder="輸入今天在現場所記錄的日方聯繫方式、核心對接窗口、或是要點清的公務禮品數量..."></textarea>
             <div id="note-status-msg" class="status-msg"></div>
         </div>
     </div>
 
 
+
+
     <!-- 面板 2: 團隊介紹 -->
     <div id="panel-team" class="section-panel">
-        <h2>👥 臺灣參訪團分組與代表簡介 (共44員)</h2>
-        <div style="background-color:#fff3e0; padding:12px; border-radius:6px; margin-bottom:15px; font-weight:500; font-size:0.9rem; color:#e65100;">
-            💡 網頁互動提示：點擊下方分組按鈕，系統將自動篩選該組隨團青年與業者的背景簡介，以便您隨時在拜會現場對照人名與談話！
+        <h2>👥 臺灣地方創生代表團——分組與詳細任務清單</h2>
+        <div style="background-color:#fff3e0; padding:12px; border-radius:6px; margin-bottom:15px; font-weight:500; font-size:0.85rem; color:#e65100;">
+            💡 網頁互動提示：點擊下方組別標籤，可即時過濾各組的團員名單。每張團員卡片已整合簡報背景、對接提問負責人及回國見學任務。
         </div>
         
         <div class="sub-tabs">
-            <button id="group-btn-all" class="active" onclick="filterTeam('all')">顯示全體</button>
-            <button id="group-btn-g1" onclick="filterTeam('g1')">🌾 文化轉譯組<br>(D&D對接)</button>
-            <button id="group-btn-g2" onclick="filterTeam('g2')">🎓 價值推廣組<br>(東川日本語對接)</button>
-            <button id="group-btn-g3" onclick="filterTeam('g3')">🏔️ 在地鏈結組<br>(美瑛觀光對接)</button>
+            <button id="group-btn-all" class="active" onclick="filterTeam('all')">全體名單</button>
+            <button id="group-btn-g1" onclick="filterTeam('g1')">🌾 A組：文化轉譯組<br>(7位成員)</button>
+            <button id="group-btn-g2" onclick="filterTeam('g2')">🎓 B組：價值推廣組<br>(7位成員)</button>
+            <button id="group-btn-g3" onclick="filterTeam('g3')">🏔️ C組：在地鏈結組<br>(8位成員)</button>
         </div>
 
+
         <div class="team-grid" id="team-container">
-            <!-- G1 -->
+            <!-- ==================== A組：文化轉譯與風土物產組 (7人) ==================== -->
             <div class="member-box ndc-border" data-group="g1">
-                <div class="m-name">葉哲岳 (組長)</div>
-                <div class="m-title">台灣田野工場有限公司 / 國發會青培站</div>
+                <div class="m-name">葉哲岳 <span style="color:#e65100; font-size:0.75rem;">[組長]</span></div>
+                <div class="m-title">台灣田野工場有限公司 (國發會青培站)</div>
                 <div class="m-desc">深耕嘉義舊監獄十餘年，投入老屋修繕、場域活化與聚落營運。曾獲紅點設計獎、日本GOOD DESIGN聚落創生獎。</div>
-            </div>
-            <div class="member-box ndc-border" data-group="g1">
-                <div class="m-name">李虹萱</div>
-                <div class="m-title">農協力企業社 / 國發會青培站</div>
-                <div class="m-desc">移居苗栗後龍創立「後龍藍莓」區域品牌，結合農業、導覽與環境教育。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：小樽市綜合博物館</div>
             </div>
             <div class="member-box ndc-border" data-group="g1">
                 <div class="m-name">蔡沛原</div>
-                <div class="m-title">鹹味島工作室 / 國發會青培站</div>
-                <div class="m-desc">來自馬祖東引，將舊魚露工廠轉化為展覽、咖啡與共創空間，曾獲iF Design Award等肯定。</div>
+                <div class="m-title">鹹味島工作室 (國發會青培站)</div>
+                <div class="m-desc">來自馬祖東引，具景觀設計背景。將舊魚露工廠轉化為共創空間，以藝術設計轉譯島嶼文化。曾獲iF設計獎等肯定。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：D&DEPARTMENT HOKKAIDO<br>💻 簡報交流負責人：7/21 簡報分享代表</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g1">
+                <div class="m-name">李虹萱</div>
+                <div class="m-title">農協力企業社 (國發會青培站)</div>
+                <div class="m-desc">移居苗栗後龍創立饗甜蔬果農場，打造「後龍藍莓」區域品牌，結合農業、導覽與環境教育。現為後龍青農聯誼會會長。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：美瑛町觀光協會<br>📢 任務：代表進行回國見學分享</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g1">
+                <div class="m-name">劉耀聰</div>
+                <div class="m-title">藏山椿工坊 (國發會青培站)</div>
+                <div class="m-desc">返鄉接手苗栗油茶與有機紅棗產業，創立藏山椿工坊，推動契作、代工與地方觀光。曾獲第四屆百大青農。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：十勝綜合振興局</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g1">
+                <div class="m-name">李彥穎</div>
+                <div class="m-title">雷打石時農行銷有限公司 (獎勵金得主)</div>
+                <div class="m-desc">研發背景返鄉創立「雷打石」，從鴨蛋出發，開發廢蛋殼再製的循環材料與工藝建材。品牌曾獲金點設計獎。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：夕張哈密瓜圓頂中心<br>📢 任務：代表進行回國見學分享</div>
             </div>
             <div class="member-box moea-border" data-group="g1">
                 <div class="m-name">黃建嘉</div>
-                <div class="m-title">大房食品股份有限公司 / 經濟部城鄉業者</div>
-                <div class="m-desc">來自桃園大溪百年豆干世家，推動製程升級與「豆渣循環×跨域創新」之傳統產業轉型。</div>
+                <div class="m-title">大房食品股份有限公司 (經濟部城鄉業者)</div>
+                <div class="m-desc">來自桃園大溪百年豆干世家，推動製程升級與「豆渣循環×跨域創新」，打造傳統產業轉型典範。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：北海道廳</div>
             </div>
             <div class="member-box moea-border" data-group="g1">
                 <div class="m-name">陳羽鉉</div>
-                <div class="m-title">翠豐綠能生技股份有限公司 / 經濟部城鄉業者</div>
-                <div class="m-desc">金融業返鄉，研發將茶渣廢料轉化為可分解的茶渣貓砂，實踐廢棄物循環模式。</div>
+                <div class="m-title">翠豐綠能生技股份有限公司 (經濟部城鄉業者)</div>
+                <div class="m-desc">自金融業返鄉創立翠豐茶業，實踐「在地原料×在地製造×循環再利用」將茶渣廢料研發轉化為可分解的茶渣貓砂。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：東川町/日本語學校</div>
             </div>
 
-            <!-- G2 -->
+
+            <!-- ==================== B組：價值推廣與關係經營組 (7人) ==================== -->
             <div class="member-box ndc-border" data-group="g2">
-                <div class="m-name">陳巨凱 (組長)</div>
-                <div class="m-title">順騎自然有限公司 / 國發會青培站</div>
-                <div class="m-desc">以自行車為媒介推動埔里地方旅行、領領訓練與人才培力，長期投入微型創業輔導。</div>
+                <div class="m-name">陳巨凱 <span style="color:#e65100; font-size:0.75rem;">[組長]</span></div>
+                <div class="m-title">順騎自然有限公司 (國發會青培站)</div>
+                <div class="m-desc">以自行車為媒介推動南投埔里地方旅行、領騎訓練、地方品牌與民宿經營，長期投入微型創業輔導與人才培力。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：美瑛町觀光協會<br>📢 任務：代表進行回國見學分享</div>
             </div>
             <div class="member-box ndc-border" data-group="g2">
                 <div class="m-name">林意評</div>
-                <div class="m-title">青出宜蘭有限公司 / 國發會青培站</div>
-                <div class="m-desc">入選第三屆百大青農，創立青出宜蘭農業運銷合作社與三星創生基地，深耕宜蘭青農網絡。</div>
+                <div class="m-title">青出宜蘭有限公司 (國發會青培站)</div>
+                <div class="m-desc">入選農業部第三屆百大青農，創立青出宜蘭農業運銷合作社與三星創生基地，三星創生基地進行青年培力。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：東川町/日本語學校<br>📢 任務：代表進行回國見學分享</div>
             </div>
             <div class="member-box ndc-border" data-group="g2">
                 <div class="m-name">徐孝晴</div>
-                <div class="m-title">頭分埔文化工作室 / 國發會青培站</div>
-                <div class="m-desc">屏東文化工作者與人類學研究者，創辦獨立書店「繫。本屋」，曾獲客委會專業三等勳章。</div>
+                <div class="m-title">頭分埔文化工作室 / 繫。本屋 (國發會青培站)</div>
+                <div class="m-desc">屏東文化工作者與人類學研究者，創辦獨立書店「繫。本屋」，以地方編輯推動文化策展、青年支持系統。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：北海道廳拜會<br>💻 簡報交流負責人：7/22 簡報分享代表</div>
             </div>
-            <div class="member-box moea-border" data-group="g2">
-                <div class="m-name">吳翊榛</div>
-                <div class="m-title">俗女村創意文化有限公司 / 經濟部城鄉業者</div>
-                <div class="m-desc">後壁俗女村創辦人，以共享共創理念活化台南後壁農村閒置老屋，輔導女性微型創業。</div>
+            <div class="member-box ndc-border" data-group="g2">
+                <div class="m-name">簡珮瑜</div>
+                <div class="m-title">禾子企業有限公司 (國發會青培站)</div>
+                <div class="m-desc">返鄉投入新北貢寮地方創生，於和禾聚落推動廢校活化、食農教育與森川里海產業串聯，著有《群山裡的牛腳印》。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：D&DEPARTMENT HOKKAIDO</div>
             </div>
             <div class="member-box moea-border" data-group="g2">
                 <div class="m-name">陳婉甄</div>
-                <div class="m-title">金門後浦商圈發展協會 / 經濟部城鄉業者</div>
-                <div class="m-desc">引進「總兵宴」深度導覽體驗，並創辦「甄洋樓」將旗袍與金門洋樓歷史建築沉沉沉浸結合。</div>
+                <div class="m-title">金門縣金城鎮後浦商圈發展協會 (經濟部城鄉業者)</div>
+                <div class="m-desc">以「金門後浦總兵宴」整合深度旅程，另將旗袍與洋樓歷史建築結合，以沉浸式體驗轉譯金門僑鄉文化。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：小樽市綜合博物館</div>
+            </div>
+            <div class="member-box moea-border" data-group="g2">
+                <div class="m-name">吳翊榛</div>
+                <div class="m-title">俗女村創意文化有限公司 (經濟部城鄉業者)</div>
+                <div class="m-desc">台南後壁俗女村創辦人，活化農村閒置老屋，推動女性微型創業與青年輔導，透過「俗女餐桌」整合食農體驗。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：十勝綜合振興局</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g2">
+                <div class="m-name">李秉衡</div>
+                <div class="m-title">迎蜂有限公司 (獎勵金得主)</div>
+                <div class="m-desc">長期深耕高雄那瑪夏，推動無螫蜂復育、生態教育與原鄉導覽。產品已成功拓展日本市場並進駐東京誠品。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：夕張哈密瓜圓頂中心</div>
             </div>
 
-            <!-- G3 -->
+
+            <!-- ==================== C組：在地鏈結與品牌發展組 (8人) ==================== -->
             <div class="member-box ndc-border" data-group="g3">
-                <div class="m-name">林峻毅 (組長)</div>
-                <div class="m-title">林果園有限公司 / 國發會青培站</div>
-                <div class="m-desc">里山有青工作站主持人、麻園社區發展協會理事長，以智慧農業與生態旅遊串聯青年培力。</div>
+                <div class="m-name">林峻毅 <span style="color:#e65100; font-size:0.75rem;">[組長]</span></div>
+                <div class="m-title">林果園有限公司 (國發會青培站)</div>
+                <div class="m-desc">里山有青工作站主持人、台中沙鹿麻園社區發展協會理事長，以智慧農業與生態旅遊建立小農經濟循環。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：北海道廳拜會<br>📢 任務：代表進行回國見學分享</div>
             </div>
             <div class="member-box ndc-border" data-group="g3">
                 <div class="m-name">蔣沛妍</div>
-                <div class="m-title">一米地有限公司 / 國發會青培站</div>
-                <div class="m-desc">移居宜蘭南澳，發行《東台灣食通信》並串連百位農友，建立大南澳區域共創系統。</div>
+                <div class="m-title">一米地有限公司 (國發會青培站)</div>
+                <div class="m-desc">移居宜蘭南澳，發行《東台灣食通信》並串連百位農友，主理南澳青培站與「南澳出花」青年創生聚落。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：東川町/日本語學校</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g3">
+                <div class="m-name">賴淑娟</div>
+                <div class="m-title">泰好玩文化事業有限公司 (國發會青培站)</div>
+                <div class="m-desc">深耕台中谷關松鶴部落，創辦泰好玩獵人工坊，推動原鄉文化體驗、跨部落遊程與青銀共創。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：D&DEPARTMENT HOKKAIDO</div>
             </div>
             <div class="member-box ndc-border" data-group="g3">
                 <div class="m-name">陳焦勤</div>
-                <div class="m-title">靜好東方事業有限公司 / 國發會青培站</div>
-                <div class="m-desc">連續十一年推動「水蜜桃的故鄉在梨山」品牌與梨山茶產地認證，曾獲風土物產組金牌獎。</div>
+                <div class="m-title">靜好東方事業有限公司 (國發會青培站)</div>
+                <div class="m-desc">連續十一年推動台中和平「水蜜桃的故鄉在梨山」品牌與梨山茶產地認證，並以公益閱讀回饋偏鄉教育。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：小樽市綜合博物館<br>💻 簡報交流負責人：7/23 簡報分享代表</div>
             </div>
             <div class="member-box moea-border" data-group="g3">
                 <div class="m-name">陳聖瑋</div>
-                <div class="m-title">北賈科創股份有限公司 / 經濟部城鄉業者</div>
-                <div class="m-desc">嘉義竹崎青年豬農，結合智慧養殖，將養豬廢水轉化為有機肥料，串聯竹崎酪梨產業循環。</div>
+                <div class="m-title">北賈科創股份有限公司 (經濟部城鄉業者)</div>
+                <div class="m-desc">來自嘉義竹崎之青年豬農，結合智慧養殖，將養豬廢水轉化為農田肥料，串聯竹崎酪梨產業建立農牧循環。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：十勝綜合振興局</div>
             </div>
             <div class="member-box moea-border" data-group="g3">
                 <div class="m-name">黃衍勳</div>
-                <div class="m-title">微醺農場 / 經濟部城鄉業者</div>
-                <div class="m-desc">雲林水林返鄉青年，結合智慧科技溫室與衛星農場共享基地，建構青年留農支持系統。</div>
+                <div class="m-title">微醺農場 (經濟部城鄉業者)</div>
+                <div class="m-desc">來自雲林水林，結合溫室設施與智慧科技，透過衛星農場與共享基地建構青年留農支持系統。曾獲國家永續發展獎。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：夕張哈密瓜圓頂中心<br>📢 任務：代表進行回國見學分享</div>
             </div>
             <div class="member-box moea-border" data-group="g3">
                 <div class="m-name">陳頎文</div>
-                <div class="m-title">宜蘭縣原住民產銷合作社 / 經濟部城鄉業者</div>
-                <div class="m-desc">具科技業背景之泰雅女婿，在大同南山建立大數據生產排程與B2B媒合，翻轉青年務農。</div>
+                <div class="m-title">保證責任宜蘭縣原住民產銷合作社 (經濟部城鄉業者)</div>
+                <div class="m-desc">具科技業背景之泰雅女婿，號召宜蘭大同四季、南山地區農二代運用菜價大數據建立生產排程，打造高冷蔬菜品牌「山上看菜」。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：美瑛町觀光協會</div>
+            </div>
+            <div class="member-box ndc-border" data-group="g3">
+                <div class="m-name">李佳樺</div>
+                <div class="m-title">林韻茶園有限公司 (國發會團隊)</div>
+                <div class="m-desc">與製茶師共同創立林韻茶園，將阿里山太興村傳統製茶轉型為精緻品牌，推廣金萱茶與窨花茶，並導入食農課程與田媽媽品牌創造在地就業。現入選亮點茶莊。</div>
+                <div style="margin-top:6px; font-size:0.75rem; color:#0d47a1; font-weight:bold;">📌 負責提問紀錄：小樽市綜合博物館</div>
             </div>
         </div>
     </div>
+
+
 
 
     <!-- 面板 3: 隨身參考資料 -->
@@ -519,40 +649,50 @@
         <div class="card">
             <h3>🛫 Day 1 機場集合防呆資訊</h3>
             <ul>
-                <li><strong>集合時間：</strong>115年7月20日 (一) <strong style="color:red;">04:25 AM</strong> (05:00 準時撥打電話催促未到人員)</li>
+                <li><strong>集合時間：</strong>115年7月20日 (一) <strong style="color:red;">04:25 AM</strong> (05:00 準時聯繫未到人員)</li>
                 <li><strong>集合地點：</strong>桃園國際機場第二航廈 **長榮航空 16號櫃台**</li>
-                <li><strong>領取物資：</strong>工作人員現場發放 VJW 通關 QR Code、地方創生行李帶</li>
+                <li><strong>領取物資：</strong>工作人員現場發放 VJW 通關 QR Code、地創行李帶</li>
                 <li><strong>核心應變聯絡人：</strong>A車領隊 李德野 (台灣 0972-104-151 / 日本 080-9463-7210)</li>
             </ul>
         </div>
 
+
         <div class="card">
             <h3>🎁 官方拜會外交禮品清單</h3>
-            <p><strong>總計準備：</strong>25 份（博雅齋 16 份、微熱山丘 8 份、傑作陶藝 1 份），總金額 NT$ 27,780</p>
-            <table style="font-size:0.85rem; margin-top:10px;">
-                <thead><tr><th>對接單位</th><th>贈送禮品品項</th><th>數量</th></tr></thead>
-                <tbody>
-                    <tr><td>小樽綜合博物館</td><td>博雅齋頂級紅烏龍禮盒 (獲得ITQI風味三星獎)</td><td>1 份</td></tr>
-                    <tr><td><strong>北海道廳 (加碼規格)</strong></td><td>微熱山丘鳳梨酥1入 + **傑作陶藝 柿柿如意翠鳥瓷盤**</td><td>各1 份</td></tr>
-                    <tr><td>北海道大學 MCIP</td><td>博雅齋頂級紅烏龍禮盒</td><td>1 份</td></tr>
-                    <tr><td>D&DEPARTMENT</td><td>博雅齋頂級紅烏龍禮盒</td><td>1 份</td></tr>
-                    <tr><td>東川町町長菊地伸</td><td>博雅齋頂級紅烏龍禮盒 + 微熱山丘鳳梨酥禮盒</td><td>各1 份</td></tr>
-                    <tr><td>十勝綜合振興局</td><td>博雅齋頂級紅烏龍禮盒 + 微熱山丘鳳梨酥禮盒</td><td>各1 份</td></tr>
-                </tbody>
-            </table>
+            <p><strong>總計準備：</strong>25 份</p>
+            <div class="table-responsive" style="margin-top: 10px; box-shadow: none; border: 1px solid #eee;">
+                <table style="font-size:0.85rem; width:100%;">
+                    <thead>
+                        <tr>
+                            <th style="background-color: #f5f5f5;">對接單位</th>
+                            <th style="background-color: #f5f5f5;">贈送禮品品項</th>
+                            <th style="background-color: #f5f5f5; width: 60px;">數量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>所有參訪據點</td><td>博雅齋頂級紅烏龍禮盒 (ITQI風味三星獎)</td><td>各 1 份</td></tr>
+                        <tr><td><strong>北海道廳 (加碼)</strong></td><td>微熱山丘鳳梨酥1入 + **傑作陶藝 柿柿如意翠鳥瓷盤**</td><td>各 1 份</td></tr>
+                        <tr><td>東川町町長菊地伸</td><td>博雅齋頂級紅烏龍禮盒 + 微熱山丘鳳梨酥禮盒</td><td>各 1 份</td></tr>
+                        <tr><td>十勝綜合振興局</td><td>博雅齋頂級紅烏龍禮盒 + 微熱山丘鳳梨酥禮盒</td><td>各 1 份</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
 
         <div class="card">
             <h3>🎬 隨身攜帶台日交流多媒體素材</h3>
             <ul>
-                <li><strong>影片一：</strong>《災後韌性影片》展現臺灣4組青培站災時應變與地方互助，已內建日文字幕精華版，適合官式拜會。</li>
+                <li><strong>影片一：</strong>《災後韌性影片》展現臺灣4組青培站災時應變與地方互助，已內建日文字幕精華版，適合官式拜會交流。</li>
                 <li><strong>影片二：</strong>《國發會地方創生宣傳短片》完整版 5:54，包含大山北月、博仁堂等個案介紹。</li>
                 <li><strong>參訪現場布條：</strong>寬 60cm × 長 270cm 「臺灣地方創生青年交流團」官方規格布條由領隊隨車攜帶。</li>
             </ul>
         </div>
     </div>
 
+
 </div>
+
 
 <script>
     // 主面板切換
@@ -567,6 +707,7 @@
         if(panelId === 'panel-ref') document.getElementById('nav-btn-3').classList.add('active');
     }
 
+
     // 每日行程切換
     let currentFlowDay = 1;
     function switchDay(dayNum) {
@@ -578,20 +719,18 @@
             else b.classList.remove('active');
         });
 
+
         // 隱藏非當日行程表格
         document.querySelectorAll('.day-flow-content').forEach(c => c.style.display = 'none');
         
-        // 依照天數動態顯示（此處Day 1-5具備詳細細流與卡片，其餘天數動態顯示）
         let targetFlow = document.getElementById('flow-d' + dayNum);
         if(targetFlow) {
             targetFlow.style.display = 'block';
-        } else {
-            // 如果後續天數尚未生成，提供防呆顯示
-            alert("正在調閱第 " + dayNum + " 天行程細流...");
         }
         
         loadHokkaidoNote();
     }
+
 
     // 團隊分組篩選
     function filterTeam(groupId) {
@@ -600,6 +739,7 @@
         else if(groupId === 'g1') document.getElementById('group-btn-g1').classList.add('active');
         else if(groupId === 'g2') document.getElementById('group-btn-g2').classList.add('active');
         else if(groupId === 'g3') document.getElementById('group-btn-g3').classList.add('active');
+
 
         document.querySelectorAll('.member-box').forEach(box => {
             if (groupId === 'all' || box.getAttribute('data-group') === groupId) {
@@ -610,24 +750,28 @@
         });
     }
 
+
     // 離線自動儲存筆記功能
     function saveHokkaidoNote() {
         const text = document.getElementById('hokkaido-note-box').value;
-        localStorage.setItem('hokkaido_v2_day_' + currentFlowDay, text);
+        localStorage.setItem('hokkaido_v6_day_' + currentFlowDay, text);
         const status = document.getElementById('note-status-msg');
         status.innerText = "已自動離線暫存於裝置中...";
         setTimeout(() => { status.innerText = ""; }, 1200);
     }
 
+
     function loadHokkaidoNote() {
-        const saved = localStorage.getItem('hokkaido_v2_day_' + currentFlowDay);
+        const saved = localStorage.getItem('hokkaido_v6_day_' + currentFlowDay);
         document.getElementById('hokkaido-note-box').value = saved ? saved : "";
     }
+
 
     window.onload = function() {
         loadHokkaidoNote();
     }
 </script>
+
 
 </body>
 </html>
